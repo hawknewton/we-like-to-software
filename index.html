@@ -48,6 +48,82 @@
 
       <section>
         <h2>I think sometimes we over do it</h2>
+        <img src="images/overdone.jpg" alt="Too many mucles">
+      </section>
+
+      <section>
+        <h2>I'm talking about</h2>
+        <ul>
+          <li>Outdated <i>best practices</i></li>
+          <li>Premature optimization</li>
+          <li>Unclear (or unchallenged) requirements</li>
+          <li>Clever software engineering</li>
+        </ul>
+      </section>
+
+      <section>
+        <section>
+          <h2>Clever software engineering</h2>
+          <small>A case study on <i>IE's SSL Chain Vulnerability</i></small>
+        </section>
+
+        <section>
+          <h2>IE's SSL Chain Vulnerability</h2>
+          <small>
+            Based on a talk by <a href="mailto:moxie@thoughtcrime.org">Moxie Marlinspike</a>
+            at Black Hat DC 2009
+          </small>
+        </section>
+
+        <section>
+          <h1>Some background</h1>
+          <img src="images/chain-normal.svg" alt="SSL chain of trust">
+        </section>
+
+        <section>
+          <h2>SSL validation algorithm</h2>
+          <p style="text-align: left;">Starting at the leaf node:</p>
+          <ol>
+            <li>Make sure the leaf node matches the site in the address bar</li>
+            <li>Check the signature and expiration date of the current node</li>
+            <li>
+              Is the current node a trusted CA cert on this machine?
+              <ol style="list-style-type: lower-alpha;">
+                <li>Yes, the cert is golden</li>
+                <li>Nope, start the procss over again with this node parent</li>
+              </ol>
+            </li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Ripe for recursion</h2>
+          <img src="images/recursion.gif" alt="Escher's hands">
+          <p style="font-style:italic;">&quot;I got to use recursion today!&quot;</p>
+          <p style="text-align: right;">-- Some Clever Software Engineer</p>
+        </section>
+
+        <section>
+          <h2>The exploit</h2>
+          <img src="images/badguy.svg" alt="Behold, the exploit!">
+        </section>
+
+        <section>
+          <h2>The details</h2>
+          <ul>
+            <li>Surprisingly, many SSL stacks were vulnerable including Konqueror, OpenSSL, and others</li>
+            <li>This was <strong>way</strong> back in '02</li>
+            <li>A working exploit was published by <a href="mailto:moxie@thoughtcrime.org">Moxie Marlinspike</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>The Moral</h1>
+          <p>When you pat yourself on the back for being clever, make sure you've not just made a horrible mistake</p>
+          <p>or</p>
+          <p>Being clever isn’t always the same as being smart</p>
+
+        </section>
       </section>
 
     </div>
