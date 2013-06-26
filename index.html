@@ -111,11 +111,21 @@
         <section>
           <h2>The details</h2>
           <ul>
-            <li>Surprisingly, many SSL stacks were vulnerable including Konqueror, OpenSSL, and others</li>
-            <li>This was <strong>way</strong> back in '02</li>
-            <li>A working exploit was published by <a href="mailto:moxie@thoughtcrime.org">Moxie Marlinspike</a></li>
-            <li>The fix involves honoring a field that disallows a cert signing other certs</li>
+            <li class="fragment">This was <strong>way</strong> back in '02</li>
+            <li class="fragment">Many SSL stacks were vulnerable including IE, OpenSSL, Konqueror, and others</li>
+            <li class="fragment">A working exploit was published by <a href="mailto:moxie@thoughtcrime.org">Moxie Marlinspike</a></li>
+            <li class="fragment">The fix involves honoring a field that disallows a cert signing other certs</li>
           </ul>
+        </section>
+
+        <section>
+          <p>
+            "Debugging is twice as hard as writing the code in the first place.
+            Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it."
+          </p>
+          <p>
+            - Brian Kernighan
+          </p>
         </section>
 
         <section>
@@ -151,6 +161,7 @@
   <script>
     // Required, even if empty.
     Reveal.initialize({
+      history: true,
       dependencies: [
         // Speaker notes
         { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
