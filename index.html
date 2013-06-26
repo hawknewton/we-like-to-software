@@ -54,17 +54,17 @@
       <section>
         <h2>I'm talking about</h2>
         <ul>
-          <li>Outdated <i>best practices</i></li>
-          <li>Premature optimization</li>
-          <li>Unclear (or unchallenged) requirements</li>
           <li>Clever software engineering</li>
+          <li>Premature optimization</li>
+          <li>Outdated <i>best practices</i></li>
+          <li>Unclear (or unchallenged) requirements</li>
         </ul>
       </section>
 
       <section>
         <section>
           <h2>Clever software engineering</h2>
-          <small>A case study on <i>IE's SSL Chain Vulnerability</i></small>
+          <small>Being clever isn’t always the same as being smart</small>
         </section>
 
         <section>
@@ -90,7 +90,7 @@
               Is the current node a trusted CA cert on this machine?
               <ol style="list-style-type: lower-alpha;">
                 <li>Yes, the cert is golden</li>
-                <li>Nope, start the procss over again with this node parent</li>
+                <li>Nope, start the process over again with this node parent</li>
               </ol>
             </li>
           </ol>
@@ -114,15 +114,32 @@
             <li>Surprisingly, many SSL stacks were vulnerable including Konqueror, OpenSSL, and others</li>
             <li>This was <strong>way</strong> back in '02</li>
             <li>A working exploit was published by <a href="mailto:moxie@thoughtcrime.org">Moxie Marlinspike</a></li>
+            <li>The fix involves honoring a field that disallows a cert signing other certs</li>
           </ul>
         </section>
 
         <section>
           <h1>The Moral</h1>
           <p>When you pat yourself on the back for being clever, make sure you've not just made a horrible mistake</p>
-          <p>or</p>
-          <p>Being clever isn’t always the same as being smart</p>
+        </section>
+      </section>
 
+      <section>
+        <section>
+          <h2>Premature Optimization</h2>
+          <small>Perfect is the enemy of good enough</small>
+        </section>
+
+        <section>
+          <h2>Don't fix a problem you don't have</h2>
+          <img src="images/mouse.jpg" alt="Mouse wearing a helmet looking at a mouse trap">
+          <aside class="notes">
+            But the trick is knowing if you have a problem
+          </aside>
+        </section>
+
+        <section>
+          <h2>Measure, Optimize, Repeat</h2>
         </section>
       </section>
 
