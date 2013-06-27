@@ -113,6 +113,92 @@
         </section>
 
         <section>
+          <img src="images/ruby-book.jpg" alt="Metaprogramming Ruby">
+          <p>Metaprogramming Ruby</p>
+          <p>by Paolo Perrotta</p>
+        </section>
+
+        <section>
+          <pre>
+            <code class="ruby">
+class Roulette
+  def method_missing(name, *args)
+    person = name.to_s.capitalize
+    2.times do
+      number = rand(10) + 1
+      puts "#{number}..."
+    end
+    "#{person} got a #{number}"
+  end
+end
+
+roulette = Roulette.new
+roulette.hawk
+roulette.jed
+            </code>
+          </pre>
+          <p>Should produce</p>
+          <pre>
+5...
+2...
+Hawk got a 2
+5...
+7...
+Jed got a 7
+          </pre>
+          <p>
+            But it doesn't work...
+            <span class="fragment">
+              We get a
+              <code>SystemStackError</code>
+            </span>
+          </p>
+        </section>
+
+        <section>
+          <p>Before</p>
+          <pre>
+            <code class="ruby">
+class Roulette
+  def method_missing(name, *args)
+    person = name.to_s.capitalize
+    2.times do
+      number = rand(10) + 1
+      puts "#{number}..."
+    end
+    "#{person} got a #{number}"
+  end
+end
+            </code>
+          </pre>
+          <div class="fragment">
+            <p>After</p>
+            <pre>
+              <code class="ruby">
+class Roulette
+  def method_missing(name, *args)
+    person = name.to_s.capitalize
+    number = 0
+    2.times do
+      number = rand(10) + 1
+      puts "#{number}..."
+    end
+    "#{person} got a #{number}"
+  end
+end
+              </code>
+            </pre>
+          </div>
+        </section>
+
+        <section>
+          <p>
+            <code>method_missing()</code>
+            bugs can be difficult to spot
+          </p>
+        </section>
+
+        <section>
           <p>
             "Debugging is twice as hard as writing the code in the first place.
             Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it."
@@ -197,6 +283,11 @@ result[2] = callService3();
         </section>
 
         <section>
+          <h2>Measure, Optimize, Iterate</h2>
+          <img src="images/iterate.png" alt="Iterate">
+        </section>
+
+        <section>
           <pre>
             <code class="java">
 if(map.hasKey(key)) {
@@ -208,15 +299,27 @@ if(map.hasKey(key)) {
 }
            </code>
           </pre>
+          <div class="fragment">
+            <p>Faster in a tight loop:</p>
+            <pre>
+              <code class="java">
+String value = map.get(key);
+if(value == null) {
+  // Do stuff without a value
+  doStuffWithoutValue();
+} else {
+  // Do stuff with value
+  doStuffWithValue(value);
+}
+             </code>
+            </pre>
+           </div>
+
           <aside class="notes">
             Can anyone tell what's wrong with the code?  Other than it was written by me, of course
           </aside>
         </section>
 
-        <section>
-          <h2>Measure, Optimize, Iterate</h2>
-          <img src="images/iterate.png" alt="Iterate">
-        </section>
 
         <section>
           <p>In the land of the blind the one-eyed man is king</p>
@@ -236,8 +339,8 @@ if(map.hasKey(key)) {
           <img src="images/gof.jpg" alt="gang of four">
           <ul>
             <li class="fragment">Still largely useful and relevent almost 20 years after it's initial publication</li>
-            <li class="fragment">Came out before refactoring IDEs and TDD became popular</li>
             <li class="fragment">Advocates coding to an interface as opposed to an implementation</li>
+            <li class="fragment">Came out before refactoring IDEs and TDD became popular</li>
           </ul>
         </section>
 
@@ -254,7 +357,7 @@ if(map.hasKey(key)) {
           <div>
             <code>org.w3c.dom.*</code>
           </div>
-          <p class="fragment">I sure am glad that came along!</p>
+          <p class="fragment" style="margin-top: 50px;">I sure am glad that came along!</p>
         </section>
 
         <section>
@@ -312,6 +415,9 @@ if(map.hasKey(key)) {
           <a href="http://vimeo.com/50018478">2009 BlackHat DC Presentation on SSL Stripping -- Moxie Marlinspike</a>
         </div>
         <div>
+          <a href="http://pragprog.com/book/ppmetr/metaprogramming-ruby">Metaprogramming Ruby by Paolo Perrotta</a>
+        </div>
+        <div>
           <a href="http://en.wikipedia.org/wiki/Design_Patterns">Design Patterns</a>
         </div>
         <div>
@@ -328,12 +434,14 @@ if(map.hasKey(key)) {
     // Required, even if empty.
     Reveal.initialize({
       history: true,
+      height: 900,
       dependencies: [
         { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
         // Syntax highlight for code elements
         { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
         { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
         { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
         // Speaker notes
         { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
       ]
