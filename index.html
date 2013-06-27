@@ -9,6 +9,10 @@
   <!--[if lt IE 9]>
   <script src="lib/js/html5shiv.js"></script>
   <![endif]-->
+
+   <!-- For syntax highlighting -->
+   <link rel="stylesheet" href="lib/css/zenburn.css">
+
 </head>
 
 <body>
@@ -328,8 +332,6 @@ if(map.hasKey(key)) {
         { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
         { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
         { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-
-
         // Speaker notes
         { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
       ]
