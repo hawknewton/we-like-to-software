@@ -88,8 +88,8 @@
 
         <section>
           <h2>Ripe for recursion</h2>
-          <p style="font-style:italic;">&quot;I got to use recursion today!&quot;</p>
           <img src="images/recursion.gif" alt="Escher's hands">
+          <p style="font-style:italic;">&quot;I got to use recursion today!&quot;</p>
           <p style="text-align: right;">-- Some Clever Software Engineer</p>
         </section>
 
@@ -238,8 +238,8 @@ result[2] = callService3();</code></pre>
             <li class="fragment">Stale data</li>
             <li class="fragment">Computational overhead</li>
             <li class="fragment">Memory footprint</li>
-            <li class="fragment">Cluster synchronization</li>
-            <li class="fragment">Operational overhead</li>
+            <li class="fragment">Cluster desynchronization</li>
+            <li class="fragment">Operational complexity</li>
           </ul>
         </section>
         <section>
@@ -307,7 +307,7 @@ if(value == null) {
           <ul>
             <li class="fragment">Still largely useful and relevent almost 20 years after it's initial publication</li>
             <li class="fragment">Advocates coding to an interface as opposed to an implementation</li>
-            <li class="fragment">Came out before refactoring IDEs and TDD became popular</li>
+            <li class="fragment">Came out before refactoring IDEs and TDD became commonplace</li>
           </ul>
         </section>
 
@@ -315,16 +315,17 @@ if(value == null) {
           <h2>The Factory Pattern</h2>
           <img src="images/bitch.jpg" alt="Divide by 0">
           <p class="fragment">
-            Arguably, the most-used and least-understood of all GOF patterns
+            Arguably the most misused of all GOF patterns
           </p>
         </section>
 
         <section>
+          <h2>Thanks guys</h2>
           <img src="images/w3c.jpg" alt="w3c">
           <div>
-            <code>org.w3c.dom.*</code>
+            <code>org.w3c.dom.Element</code>
           </div>
-          <p class="fragment" style="margin-top: 50px;">I sure am glad that came along!</p>
+          <p class="fragment" style="margin-top: 50px;">I sure am glad that came along</p>
         </section>
 
         <section>
@@ -351,14 +352,18 @@ if(value == null) {
           <h3>large-scale hierarchical site management</h3>
           <ul>
             <li class="fragment">Thousands of dynamic websites</li>
-            <li class="fragment">Business mandated 1.5 second max load time</li>
-            <li class="fragment">Massively complex caching infrastructure to avoid per-site initial 5 second load time</li>
+            <li class="fragment">Business mandated 1.5 second max page load time</li>
+            <li class="fragment">Massively complex caching infrastructure to avoid once-per-site 5 second initial page load time</li>
           </ul>
         </section>
 
         <section>
           <h2>Polishing Cannonballs</h2>
           <img src="images/cannonball.jpg" alt="Cannonball">
+          <p class="fragment">
+            We should remember to ask hard questions, not only of the business
+            but also of ourselves
+          </p>
         </section>
       </section>
 
