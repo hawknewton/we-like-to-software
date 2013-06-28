@@ -119,9 +119,7 @@
         </section>
 
         <section>
-          <pre>
-            <code class="ruby">
-class Roulette
+          <pre><code class="ruby">class Roulette
   def method_missing(name, *args)
     person = name.to_s.capitalize
     2.times do
@@ -134,18 +132,14 @@ end
 
 roulette = Roulette.new
 roulette.hawk
-roulette.jed
-            </code>
-          </pre>
+roulette.jed</code></pre>
           <p>Should produce</p>
-          <pre>
-5...
+          <pre>5...
 2...
 Hawk got a 2
 5...
 7...
-Jed got a 7
-          </pre>
+Jed got a 7</pre>
           <p>
             But it doesn't work...
             <span class="fragment">
@@ -157,9 +151,7 @@ Jed got a 7
 
         <section>
           <p>Before</p>
-          <pre>
-            <code class="ruby">
-class Roulette
+          <pre><code class="ruby">class Roulette
   def method_missing(name, *args)
     person = name.to_s.capitalize
     2.times do
@@ -168,14 +160,10 @@ class Roulette
     end
     "#{person} got a #{number}"
   end
-end
-            </code>
-          </pre>
+end</code></pre>
           <div class="fragment">
             <p>After</p>
-            <pre>
-              <code class="ruby">
-class Roulette
+            <pre><code class="ruby">class Roulette
   def method_missing(name, *args)
     person = name.to_s.capitalize
     number = 0
@@ -185,9 +173,7 @@ class Roulette
     end
     "#{person} got a #{number}"
   end
-end
-              </code>
-            </pre>
+end</code></pre>
           </div>
         </section>
 
@@ -224,28 +210,20 @@ end
 
         <section>
           <p>Instead of this:</p>
-          <pre>
-            <code class="java">
-String[] result = new String[3];
+          <pre><code class="java">String[] result = new String[3];
 result[0] = callService1();
 result[1] = callService2();
-result[2] = callService3();
-            </code>
-          </pre>
+result[2] = callService3();</code></pre>
           <div class="fragment">
             <p>This:</p>
-            <pre>
-              <code class="java">
-  Future&lt;String&gt; future1 = execCallable(new Callable&lt;String&gt;() {
+            <pre><code class="java">Future&lt;String&gt; future1 = execCallable(new Callable&lt;String&gt;() {
     public String call() throws Exception {
       callService1();
     }
   });
   // repeat two more times...
 
-  String[] result = { future1.get(), future2.get(), future3.get() };
-              </code>
-            </pre>
+  String[] result = { future1.get(), future2.get(), future3.get() };</code></pre>
           </div>
           <div class="fragment">
             <p><code>CancellationException, ExecutionException, InterruptedException</code></p>
@@ -289,31 +267,23 @@ result[2] = callService3();
         </section>
 
         <section>
-          <pre>
-            <code class="java">
-if(map.hasKey(key)) {
+          <pre><code class="java">if(map.hasKey(key)) {
   // Do stuff without a value
   doStuffWithoutValue();
 } else {
   // Do stuff with value
   doStuffWithValue(map.get(key));
-}
-           </code>
-          </pre>
+}</code></pre>
           <div class="fragment">
             <p>Faster in a tight loop:</p>
-            <pre>
-              <code class="java">
-String value = map.get(key);
+            <pre><code class="java">String value = map.get(key);
 if(value == null) {
   // Do stuff without a value
   doStuffWithoutValue();
 } else {
   // Do stuff with value
   doStuffWithValue(value);
-}
-             </code>
-            </pre>
+}</code></pre>
            </div>
 
           <aside class="notes">
