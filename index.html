@@ -70,21 +70,17 @@
         </section>
 
         <section>
-          <h1>Some background</h1>
+          <h3>SSL validation algorithm</h3>
           <img src="images/chain-normal.svg" alt="SSL chain of trust">
-        </section>
-
-        <section>
-          <h2>SSL validation algorithm</h2>
-          <p style="text-align: left;">Starting at the leaf node:</p>
+          <p style="text-align: left;" class="fragment">Starting at the leaf node:</p>
           <ol>
-            <li>Make sure the leaf node matches the site in the address bar</li>
-            <li>Check the signature and expiration date of the current node</li>
-            <li>
-              Is the current node a trusted CA cert on this machine?
+            <li class="fragment">Make sure the leaf node matches the site in the address bar</li>
+            <li class="fragment">Check the signature and expiration date of the current node</li>
+            <li class="fragment">
+              Is the current node a trusted CA cert by the operating system?
               <ol style="list-style-type: lower-alpha;">
-                <li>Yes, the cert is golden</li>
-                <li>Nope, start the process over again with this node parent</li>
+                <li class="fragment">Yes, the cert is golden</li>
+                <li class="fragment">Nope, start the process over again with this node's parent</li>
               </ol>
             </li>
           </ol>
